@@ -12,4 +12,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+    environment:
+      - NODE_ENV=production
+      - DB_USERNAME=root
+      - DB_PASSWORD=my-secret-pw
+      - DB_NAME=mybestapp
+      - DB_HOSTNAME=mysql
 # docker run -p 3000:3000 back
