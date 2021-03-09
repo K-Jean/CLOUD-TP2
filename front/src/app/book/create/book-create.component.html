@@ -1,0 +1,7 @@
+<form (ngSubmit)="validate()" #bookForm="ngForm">
+    <label>Title:</label>
+    <input type="text" name="title" [(ngModel)]="book.title" />
+    <label>Description:</label>
+    <input type="text" name="description" [(ngModel)]="book.description" />
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

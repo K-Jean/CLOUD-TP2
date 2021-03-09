@@ -1,0 +1,20 @@
+<div *ngIf="book$ | async as book; else loading">
+    <ng-container *ngIf='!edit; else editTemplate'>
+        <p>Title : {{book.title}}</p>
+        <p>Description : {{book.description}}</p>
+        <p (click)="deleteBook(book.id)">delete</p>
+        <p (click)="editMode(true)">edit</p>
+    </ng-container>
+    <ng-template #editTemplate>
+        <form (ngSubmit)="validate(book)" #bookForm="ngForm">
+            <p>Title : {{book.title}}</p>
+            <label>Description:</label>
+            <input type="text" name="description" [(ngModel)]="book.description" />
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </ng-template>
+</div>
+
+<ng-template #loading>
+    Loading...
+</ng-template>
