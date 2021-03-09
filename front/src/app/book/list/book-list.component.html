@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor='let book of books$ | async'>
+        <a [routerLink]="['/book', book.id]">{{book.title}}</a>
+        <p (click)="deleteBook(book.id)">delete</p>
+    </li>
+</ul>
