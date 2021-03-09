@@ -18,4 +18,10 @@ services:
       - DB_PASSWORD=my-secret-pw
       - DB_NAME=mybestapp
       - DB_HOSTNAME=mysql
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - 4200:4200
 # docker run -p 3000:3000 back
